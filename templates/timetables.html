@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body %}
+            <div class="row">
+        
+            <!-- TODO: add functionality for n timetables -->
+                <form action="lovebirds.cgi" method="post">
+                    <label style="display:block" for="p1">Person
+                    1</label><input id="p1" type="text" name="p1in"><input type="text" name="p1clash" placeholder="Clash hours (max 3)">
+                    <label style="display:block" for="p2">Person 2</label><input id="p2" type="text" name="p2in"><input type="text" name="p2clash" placeholder="Clash hours (max 3)">
+                    <input type="submit" value="Make love!" />
+                </form>
+            </div>
+{% endblock %}

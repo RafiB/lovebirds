@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Lovebirds</title>
+        <style type="text/css">
+            <!--
+                @import url("http://twitter.github.io/bootstrap/assets/css/bootstrap.css");
+                @import url("http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css");
+            -->
+        </style>
+    </head>
+
+    <script>
+        function toggleElement(id) {
+            if(document.getElementById(id).style.display == 'none') {
+                document.getElementById(id).style.display = '';
+            }
+            else {
+                document.getElementById(id).style.display = 'none';
+            }
+        }
+    </script>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <H2>Lovebirds</H2>
+                <img src="http://cgi.cse.unsw.edu.au/~rble114/static/LovebirdsLogo.jpg" alt="http://3.bp.blogspot.com/_XdP6Lp2ceqY/TUbhoAwGYlI/AAAAAAAAlOc/do83f7IKpUs/s400/636x460design_01.jpg">
+            </div>
+            {% block body %}{% endblock %}
+            {% block footer %}{% endblock %}
+        </div>
+    </body>
+
+</html>
+
