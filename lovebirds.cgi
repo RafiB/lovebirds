@@ -5,31 +5,25 @@
 # Based heavily off code by Evgeny Martynov #
 #############################################
 
-import sys
-
-import circles_generator, circles_interface
+import circles_interface
 
 import cgi
 import cgitb
 
-import signal
-import time
-
 import re
 
 cgitb.enable()
+
+# http://getbootstrap.com/2.3.2/assets/css/bootstrap.css
+# http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css
 
 def printTop():
     print """<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Lovebirds</title>
-        <style type="text/css">
-            <!--
-                @import url("http://twitter.github.io/bootstrap/assets/css/bootstrap.css");
-                @import url("http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css");
-            -->
-        </style>
+        <link rel="stylesheet" type="text/css" href="../static/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../static/bootstrap-responsive.css">
     </head>
 
     <script>
@@ -47,10 +41,10 @@ def printTop():
         <div class="container">
             <div class="row">
                 <H2>Lovebirds</H2>
-                <img src="../static/LovebirdsLogo.jpg" alt="http://3.bp.blogspot.com/_XdP6Lp2ceqY/TUbhoAwGYlI/AAAAAAAAlOc/do83f7IKpUs/s400/636x460design_01.jpg">
+                <img src="LovebirdsLogo.jpg" alt="http://3.bp.blogspot.com/_XdP6Lp2ceqY/TUbhoAwGYlI/AAAAAAAAlOc/do83f7IKpUs/s400/636x460design_01.jpg">
             </div>
             <div class="row">
-        
+
             <!-- TODO: add functionality for n timetables -->
                 <form action="lovebirds.cgi" method="post">
                     <label style="display:block" for="p1">Person
@@ -63,7 +57,7 @@ def printTop():
 
 def printBottom():
     print """
-            <a href="javascript:toggleElement('how-to')"><img src="../static/LovebirdsPlus.gif" alt="http://www.water.ca.gov/wateruseefficiency/images/plus_sign.gif">How to use Lovebirds</a>
+            <a href="javascript:toggleElement('how-to')"><img src="LovebirdsPlus.gif" alt="http://www.water.ca.gov/wateruseefficiency/images/plus_sign.gif">How to use Lovebirds</a>
             <div id="how-to" style="display:none">
                 Making a timetable with another person is the ultimate way to show
                 love and devotion. However, if you've ever met me, you'd understand
@@ -79,7 +73,7 @@ def printBottom():
 
             </div><p />
 
-            <a href="javascript:toggleElement('FAQ')"><img src="../static/LovebirdsPlus.gif" alt="http://www.water.ca.gov/wateruseefficiency/images/plus_sign.gif">FAQ</a>
+            <a href="javascript:toggleElement('FAQ')"><img src="LovebirdsPlus.gif" alt="http://www.water.ca.gov/wateruseefficiency/images/plus_sign.gif">FAQ</a>
             <div id="FAQ" style="display:none">
                 <ol>
                     <li>Do you have to be in love with another person to use Lovebirds?</li>
